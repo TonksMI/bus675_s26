@@ -12,27 +12,11 @@ Welcome! This repo has everything you'll need for the course - lectures, labs, e
 
 ## How this works
 
-You'll get your own private copy of this repo through GitHub Classroom. That way you can edit the lecture notebooks, take notes, mess around with code, and I can see what you're working on. 
+First, you need a GitHub account, so please make one (if you don't already have one), and make sure you sign up for GitHub Education (use your student email) to get those sweet student benefits.
 
-**The key thing**: Make sure you **push** your work (don't just commit locally) so I can actually see your progress.
+You're going to fork my repository and then clone your fork to your local computer. This gives you your own copy of lectures that you can edit as you see fit. Periodically, when I release a new lecture notebook, I'll ask you to go to your GitHub page and synchronize your fork with my repository. Then, just run `git pull` from your local directory to get your local code up to date. 
 
-### Initial Setup
-
-Once you accept the GitHub Classroom assignment and clone your repo, run this **one time** from a terminal in `/path/to/your_repo`:
-
-```bash
-git remote add upstream https://github.com/ChapmanMSBA/bus675_s26.git
-```
-
-### Getting New Material
-
-When I add new stuff, I'll give you a heads up to run:
-
-```bash
-git pull upstream main
-```
-
-If you get merge conflicts, no worries - just keep your local changes.
+**The key thing**: Make sure that as you work, you **commit and push** your changes (don't just commit locally) so I can see your progress.
 
 
 ## What to expect
