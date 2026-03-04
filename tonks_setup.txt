@@ -1,1 +1,4 @@
 I have set up my github
+
+Use this line to get code upstream files
+git merge upstream/main --autostash
