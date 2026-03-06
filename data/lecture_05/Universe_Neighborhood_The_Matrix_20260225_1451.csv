@@ -1,0 +1,391 @@
+Movie,IMDb ID,Distance
+The Matrix,tt0133093,0.0
+Elysium,tt1535108,0.0670124
+The Matrix Resurrections,tt10838180,0.08268288
+Terminator Salvation,tt0438488,0.08939122
+The Island,tt0399201,0.09952837
+The Matrix Revolutions,tt0242653,0.10580428
+Terminator 2: Judgment Day,tt0103064,0.11258161
+Allegiant,tt3410834,0.11443879
+What Happened to Monday,tt1536537,0.11665422
+Terminator: Dark Fate,tt6450804,0.11883583
+Snowpiercer,tt1706620,0.12571144
+RoboCop,tt0093870,0.12590389
+Mad Max: Fury Road,tt1392190,0.12679702
+Æon Flux,tt0402022,0.1288717
+Dawn of the Planet of the Apes,tt2103281,0.13174611
+War for the Planet of the Apes,tt3450958,0.13187642
+V for Vendetta,tt0434409,0.13191566
+Equilibrium,tt0238380,0.13721754
+Blade Runner 2049,tt1856101,0.14607918
+Cloud Atlas,tt1371111,0.14996663
+Total Recall,tt1386703,0.15340567
+Gamer,tt1034032,0.15360132
+The Hunger Games: Mockingjay - Part 2,tt1951266,0.15402596
+The Divergent Series: Insurgent,tt2908446,0.15515362
+Judge Dredd,tt0113492,0.15532003
+Total Recall,tt0100802,0.15735638
+Children of Men,tt0206634,0.15926518
+The Matrix Reloaded,tt0234215,0.16273555
+The Hunger Games: Mockingjay - Part 1,tt1951265,0.17506947
+Chappie,tt1823672,0.17843887
+Alita: Battle Angel,tt0437086,0.18679808
+Kingdom of the Planet of the Apes,tt11389872,0.19216074
+Serenity,tt0379786,0.19243519
+Divergent,tt1840309,0.1961601
+Mad Max Beyond Thunderdome,tt0089530,0.1965173
+The Hunger Games,tt1392170,0.19846606
+Johnny Mnemonic,tt0113481,0.20028692
+RoboCop 2,tt0100502,0.20270011
+Minority Report,tt0181689,0.20850307
+Repo Men,tt1053424,0.20886816
+Escape from L.A.,tt0116225,0.21036997
+Lockout,tt1592525,0.21323645
+Blade Runner,tt0083658,0.21614082
+The Postman,tt0119925,0.21761355
+The Hunger Games: Catching Fire,tt1951264,0.21947771
+Strange Days,tt0114558,0.22310291
+Terminator 3: Rise of the Machines,tt0181852,0.22496389
+Rollerball,tt0073631,0.23014641
+Terminator Genisys,tt1340138,0.23170201
+In Time,tt1637688,0.23210344
+Vesper,tt20225374,0.23401196
+The Running Man,tt0093894,0.2357519
+Demolition Man,tt0106697,0.23755589
+Ghost in the Shell,tt1219827,0.23861358
+The Road Warrior,tt0082694,0.23908746
+Planet of the Apes,tt0133152,0.23977177
+Chaos Walking,tt2076822,0.24157995
+Maze Runner: The Scorch Trials,tt4046784,0.24198763
+Resident Evil: Extinction,tt0432021,0.2493884
+Metropolis,tt0017136,0.25331423
+Night Raiders,tt9568230,0.25672507
+Looper,tt1276104,0.25706974
+Atlas,tt14856980,0.27104127
+Freejack,tt0104299,0.2722572
+The Giver,tt0435651,0.27402705
+X-Men: Days of Future Past,tt1877832,0.2758466
+The Chronicles of Riddick,tt0296572,0.27609053
+Dune,tt0087182,0.27711654
+Mortal Engines,tt1571234,0.27852434
+RoboCop,tt1234721,0.2790897
+Ultraviolet,tt0370032,0.28074855
+Oblivion,tt1483013,0.28804883
+The Midnight Sky,tt10539608,0.28858182
+Resident Evil: Retribution,tt1855325,0.2895371
+Dredd,tt1343727,0.29180872
+The Running Man,tt14107334,0.29567254
+Surrogates,tt0986263,0.2966263
+ARQ,tt5640450,0.2992187
+Voyagers,tt9664108,0.30015174
+Babylon A.D.,tt0364970,0.30483505
+Sunshine,tt0448134,0.3065188
+Escape from New York,tt0082340,0.30670074
+Gattaca,tt0119177,0.3084117
+The 6th Day,tt0216216,0.31033206
+Death Race,tt0452608,0.31286672
+Doomsday,tt0483607,0.31546122
+Terminator II,tt0098321,0.3171309
+Daybreakers,tt0433362,0.32822642
+Maze Runner: The Death Cure,tt4500922,0.32924873
+Waterworld,tt0114898,0.33022922
+The Wandering Earth II,tt13539646,0.341992
+Soylent Green,tt0070723,0.34501693
+The Time Machine,tt0268695,0.34826824
+They Live,tt0096256,0.35269216
+Endgame - Bronx lotta finale,tt0089091,0.3531972
+The Purge: Anarchy,tt2975578,0.35341722
+Resident Evil: The Final Chapter,tt2592614,0.35369775
+"Hesus, rebolusyunaryo",tt0309675,0.35503218
+Dead End Drive-In,tt0090915,0.35536432
+"I, Robot",tt0343818,0.35589144
+Code 46,tt0345061,0.35673457
+Interstellar,tt0816692,0.35938042
+Ghost in the Shell Arise: Border 2 - Ghost Whisper,tt3017864,0.3650617
+The Darkest Minds,tt4073790,0.36837733
+Tank Girl,tt0114614,0.36882868
+Planet of the Apes,tt0063442,0.3741932
+The First Purge,tt6133466,0.37612453
+9,tt0472033,0.37690592
+Rakuen Tsuiho: Expelled from Paradise,tt2859246,0.38305664
+Rebel Moon 2,tt23137904,0.3854595
+The Purge: Election Year,tt4094724,0.38587025
+Paycheck,tt0338337,0.38749585
+Tenet,tt6723592,0.3876115
+Polaris,tt14587026,0.38919753
+Watchmen,tt0409459,0.3905553
+Rise of the Planet of the Apes,tt1318514,0.39185324
+Passengers,tt1355644,0.3958493
+Starship Troopers,tt0120201,0.39672732
+The Colony,tt1160996,0.39678678
+The Handmaid's Tale,tt0099731,0.3986059
+Upgrade,tt6499752,0.40098754
+The Blackout,tt8664988,0.40379825
+Ghost in the Shell Arise: Border 3 - Ghost Tears,tt3579524,0.40380925
+The Book of Eli,tt1037705,0.4104056
+Mobile Suit Gundam II: Soldiers of Sorrow,tt0159510,0.41128564
+The Abyss,tt0096754,0.4122861
+Galaxy Express 999,tt0080772,0.41476235
+Mindwarp,tt0100152,0.41592216
+Fist of the North Star,tt0142371,0.4182218
+The Terminator,tt0088247,0.4277086
+Star Trek II: The Wrath of Khan,tt0084726,0.42986515
+Moon,tt1182345,0.43264547
+Battlefield Earth,tt0185183,0.4341444
+Ad Astra,tt2935510,0.44340205
+2001: A Space Odyssey,tt0062622,0.44390967
+1984,tt0087803,0.4463455
+City of Ember,tt0970411,0.45036438
+Land of the Dead,tt0418819,0.4514055
+Virtuosity,tt0114857,0.4516578
+Woman in the Moon,tt0019901,0.45326465
+Eagle Eye,tt1059786,0.4564454
+Star Trek VI: The Undiscovered Country,tt0102975,0.45850486
+Brazil,tt0088846,0.4612553
+Timecop,tt0111438,0.46240184
+Mission to Mars,tt0183523,0.46249756
+Ghost in the Shell,tt0113568,0.4638714
+AI Amok,tt10579380,0.4730968
+Monsters of Man,tt6456326,0.4796482
+Dune,tt1160419,0.47981602
+The Martian,tt3659388,0.4814526
+Roujin Z,tt0102812,0.4847184
+The Last Scout,tt2923834,0.49290943
+Gravity,tt1454468,0.4947733
+Moonfall,tt5834426,0.49757004
+Ender's Game,tt1731141,0.49798402
+A Scanner Darkly,tt0405296,0.5020799
+Rogue One: A Star Wars Story,tt3748528,0.50354975
+Star Trek: First Contact,tt0117731,0.50423217
+Tron,tt0084827,0.50801736
+Fullmetal Alchemist the Movie: Conqueror of Shamballa,tt0485323,0.51338816
+Reign of Fire,tt0253556,0.5151558
+Bloodshot,tt1634106,0.51631314
+District 9,tt1136608,0.5192687
+Prometheus,tt1446714,0.5208387
+The Tomorrow War,tt9777666,0.5208965
+Contact,tt0118884,0.5252218
+Resident Evil: Afterlife,tt1220634,0.52556115
+Wings of Honneamise,tt0093207,0.52785426
+Star Trek Into Darkness,tt1408101,0.5284252
+The Core,tt0298814,0.5293415
+TC 2000,tt0108277,0.5302737
+Invasion,tt8060328,0.53116554
+Star Trek: Generations,tt0111280,0.5319056
+The Net,tt0113957,0.5336241
+WarGames,tt0086567,0.5351243
+12 Monkeys,tt0114746,0.53631794
+I Am Mother,tt6292852,0.5401393
+Akira,tt0094625,0.5426886
+Source Code,tt0945513,0.548439
+Damnation Alley,tt0075909,0.55600893
+Edge of Tomorrow,tt1631867,0.55976224
+Evacuate from the 21st Century,tt7171442,0.5605832
+Star Wars: Episode III - Revenge of the Sith,tt0121766,0.56478685
+Star Trek: Nemesis,tt0253754,0.56547856
+Star Trek III: The Search for Spock,tt0088170,0.56609493
+A.I. Artificial Intelligence,tt0212720,0.567535
+Predators,tt1424381,0.5680957
+Aachi & Ssipak,tt0972542,0.56907064
+Apocalyptic 2077,tt8484370,0.57059747
+The Host,tt1517260,0.5745544
+Nausicaä of the Valley of the Wind,tt0087544,0.58036697
+Godzilla: The Planet Eater,tt8478602,0.5885209
+Dark City,tt0118929,0.59424806
+Dune Warriors,tt0099474,0.59499896
+Geostorm,tt1981128,0.6004447
+Deja Vu,tt0453467,0.60224503
+Patema Inverted,tt2981768,0.602576
+Final Fantasy: The Spirits Within,tt0173840,0.60833806
+Tron: Legacy,tt1104001,0.61294454
+Star Trek: The Motion Picture,tt0079945,0.6142561
+Lucy,tt2872732,0.61930525
+Armageddon,tt0120591,0.63151586
+Sword Art Online the Movie: Ordinal Scale,tt5544384,0.63630295
+Steel Dawn,tt0094033,0.6369953
+Inception,tt1375666,0.6395033
+Close Encounters of the Third Kind,tt0075860,0.6481309
+Star Trek: Insurrection,tt0120844,0.65120906
+Stealth,tt0382992,0.66134125
+Settlers,tt9373688,0.6620409
+Lost in Space,tt0120738,0.66360795
+The Day the Earth Stood Still,tt0043456,0.6644118
+Aliens,tt0090605,0.66529244
+Boss Level,tt7638348,0.6660106
+Extinction,tt3201640,0.66807395
+Self/less,tt2140379,0.6714903
+uk18,tt5254886,0.67151874
+eXistenZ,tt0120907,0.67278045
+Escape from the Planet of the Apes,tt0067065,0.67343044
+Upside Down,tt1374992,0.6775328
+Star Trek,tt0796366,0.6785667
+Battle Beyond the Sun,tt0053103,0.68024343
+Transcendence,tt2209764,0.6811378
+Battle Beyond the Stars,tt0080421,0.69026715
+Apollo 13,tt0112384,0.6918122
+Macross: Do You Remember Love?,tt0087660,0.69393885
+Europa Report,tt2051879,0.69591725
+Split Second,tt0105459,0.69929945
+Riddick,tt1411250,0.70331085
+Assassin's Creed,tt2094766,0.7036305
+Arrival,tt2543164,0.70506763
+Resident Evil: Apocalypse,tt0318627,0.70923513
+After Earth,tt1815862,0.7095945
+I Am Legend,tt0480249,0.71042526
+Pacific Rim: Uprising,tt2557478,0.71106535
+Coma,tt6087226,0.71175367
+Alien³,tt0103644,0.7145034
+Total Force,tt0145534,0.7160304
+In the Lost Lands,tt4419684,0.7189801
+Project Power,tt7550000,0.72152466
+Ex Machina,tt0470752,0.7216015
+Predator,tt0093773,0.72558457
+War Between the Planets,tt0059588,0.7265535
+Independence Day: Resurgence,tt1628841,0.7275019
+The 5th Wave,tt2304933,0.7308395
+Titan A.E.,tt0120913,0.73144805
+Pacific Rim,tt1663662,0.736534
+Spiderhead,tt9783600,0.7378677
+The Exigency,tt10086834,0.74311167
+Deep Impact,tt0120647,0.75207394
+Tik Tik Tik,tt7280786,0.7535303
+Avatar,tt0499549,0.75377774
+Cosmic Sin,tt11762434,0.754138
+The Platform,tt8228288,0.75439095
+Wheels of Fire,tt0088393,0.75892967
+Pandorum,tt1188729,0.75943106
+Invasion of the Body Snatchers,tt0077745,0.7601835
+The X Files,tt0120902,0.76299673
+Alien: Resurrection,tt0118583,0.76900357
+Deadman Apocalypse,tt4606498,0.7742252
+VR Fighter,tt18933046,0.7755387
+The Cloverfield Paradox,tt2548396,0.7770147
+Companion,tt26584495,0.7791636
+Knowing,tt0448011,0.7797306
+The Andromeda Strain,tt0066769,0.7805648
+The Predator,tt3829266,0.78250295
+Jumper,tt0489099,0.7827602
+Battleship,tt1440129,0.78284216
+Counter Clockwise,tt3836530,0.78298557
+The Day the Earth Stood Still,tt0970416,0.783287
+Finch,tt3420504,0.78921807
+Pitch Black,tt0134847,0.79060394
+Annihilation,tt2798920,0.7909372
+World War Z,tt0816711,0.793449
+The Circle,tt4287320,0.7940348
+28 Days Later,tt0289043,0.807381
+Ready Player One,tt1677720,0.8088858
+Paprika,tt0851578,0.8099128
+The Darkest Hour,tt1093357,0.81033075
+The Signal,tt2910814,0.81224686
+Sphere,tt0120184,0.81290317
+Outbreak,tt0114069,0.8144409
+Transformers: Dark of the Moon,tt1399103,0.8149429
+Songbird,tt12592252,0.8150888
+Infini,tt3327624,0.8174175
+Star Wars: Episode V - The Empire Strikes Back,tt0080684,0.817491
+The Maze Runner,tt1790864,0.8185719
+Stargate,tt0111282,0.8214007
+Gantz,tt1525835,0.8229288
+Cinderella the Cat,tt5432712,0.823693
+The Invasion,tt0427392,0.8253542
+Star Wars: Episode VIII - The Last Jedi,tt2527336,0.82786137
+Jurassic Park,tt0107290,0.8301766
+Solaris,tt0307479,0.83088166
+I Am Mortal,tt6385680,0.8320084
+Valerian and the City of a Thousand Planets,tt2239822,0.8326169
+WALL·E,tt0910970,0.8331039
+Tomorrowland,tt1964418,0.83449984
+Eri Eri rema sabakutani,tt0461769,0.8351331
+Next,tt0435705,0.83713573
+Solo: A Star Wars Story,tt3778644,0.8380834
+Life,tt5442430,0.8384578
+Independence Day,tt0116629,0.83918655
+Tin Can,tt8413040,0.840885
+Jupiter Ascending,tt1617661,0.84455794
+War of the Worlds,tt0407304,0.8507056
+Cat-Women of the Moon,tt0045609,0.8537866
+Battle of the Worlds,tt0054950,0.8538865
+Godzilla: King of the Monsters,tt3741700,0.85629326
+The Thirteenth Floor,tt0139809,0.8613174
+Forgotten Experiment,tt7106686,0.86137056
+Alien: Covenant,tt2316204,0.8614138
+The Meg,tt4779682,0.8638495
+Lolita 2000,tt0130089,0.866176
+X2: X-Men United,tt0290334,0.8680539
+Doom,tt0419706,0.8706054
+2012,tt1190080,0.8707262
+Plaguers,tt0918554,0.8728174
+Space Cowboys,tt0186566,0.87300503
+Primer,tt0390384,0.8730088
+Universal Soldier,tt0105698,0.8732861
+Eternity,tt1823684,0.8737442
+Cowboys & Aliens,tt0409847,0.8756399
+Tron: Ares,tt6604188,0.8772045
+Monsters,tt1470827,0.8776481
+Cube²: Hypercube,tt0285492,0.8787135
+Species,tt0114508,0.88348526
+Underwater,tt5774060,0.8850557
+Sputnik,tt11905962,0.8872532
+Midnight Special,tt2649554,0.8881721
+Transformers: The Last Knight,tt3371366,0.8893658
+Redline,tt1483797,0.8968731
+Alien,tt0078748,0.89953774
+Replicas,tt4154916,0.90094304
+Wyrmwood: Road of the Dead,tt2535470,0.9025858
+I Origins,tt2884206,0.90724736
+Cube,tt0123755,0.9086403
+The Thing,tt0084787,0.91018003
+IO,tt3256226,0.9109315
+Lost Planet Airmen,tt0043758,0.91215426
+Abduction,tt7867360,0.91292083
+400 Days,tt3774790,0.9151441
+Star Wars: Episode II - Attack of the Clones,tt0121765,0.91774035
+The Fifth Element,tt0119116,0.9184754
+Transformers: Age of Extinction,tt2109248,0.9211969
+Avatar: The Way of Water,tt1630029,0.9258097
+Jurassic World: Dominion,tt8041270,0.92715865
+Timecrimes,tt0480669,0.92761153
+Event Horizon,tt0119081,0.9300591
+2177: The San Francisco Love Hacker Crimes,tt10110872,0.931059
+Star Wars: The Clone Wars,tt1185834,0.935269
+Transformers,tt0418279,0.9365727
+The Human Duplicators,tt0059290,0.9378435
+Star Wars: Episode I - The Phantom Menace,tt0120915,0.93931097
+The Apocalypse,tt0118631,0.9394079
+Rampage,tt2231461,0.9399209
+Uncanny,tt2321502,0.9456364
+Cube,tt13975458,0.9518243
+Vanishing Waves,tt2208216,0.9536455
+Zombie Apocalypse: Redemption,tt1715362,0.9548899
+Avengers: Endgame,tt4154796,0.957456
+Dino Brained,tt10188156,0.9575788
+Legion of Super-Heroes,tt22769820,0.95949197
+Die Theorie von Allem,tt18453866,0.96130383
+Astro,tt6156656,0.9634083
+DEFCON-4,tt0087130,0.96390736
+Star Wars,tt0076759,0.964663
+Predator 2,tt0100403,0.96492165
+Battle Los Angeles,tt1217613,0.9652695
+G.I. Joe: The Rise of Cobra,tt1046173,0.96546406
+Skyline,tt1564585,0.96717924
+The Day After Tomorrow,tt0319262,0.9690704
+Star Wars: Episode VII - The Force Awakens,tt2488496,0.97296554
+The Giant Claw,tt0050432,0.9734142
+Gold,tt6020800,0.97483456
+Transformers: Revenge of the Fallen,tt1055369,0.9752147
+Black Panther,tt1825683,0.9754761
+Alien vs. Predator,tt0370263,0.9758977
+I Married a Monster from Outer Space,tt0051756,0.9765116
+Venom,tt1270797,0.97763056
+Morbius,tt5108870,0.982957
+Alien Showdown: The Day the Old West Stood Still,tt2349142,0.98362654
+Black Panther: Wakanda Forever,tt9114286,0.9841047
+Everything Beautiful Is Far Away,tt3605266,0.9853399
+Predestination,tt2397535,0.9853717
+Morgan,tt4520364,0.9865204
+Prey,tt11866324,0.9878953
+Resident Evil,tt0120804,0.98936665
+The Monolith Monsters,tt0050720,0.9912528
+Man of Steel,tt0770828,0.99768305
+12 to the Moon,tt0054415,0.9980225
