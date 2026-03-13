@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bc483135b404a2ebb5739a2c45f89489 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_bc483135b404a2ebb5739a2c45f89489" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bc483135b404a2ebb5739a2c45f89489 = L.map(
+                "map_bc483135b404a2ebb5739a2c45f89489",
+                {
+                    center: [40.87034999999999, -79.01344999999999],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_bc483135b404a2ebb5739a2c45f89489);
+
+            
+
+        
+    
+            var tile_layer_2ca5b87bb08fb5e913de452b493cf924 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2ca5b87bb08fb5e913de452b493cf924.addTo(map_bc483135b404a2ebb5739a2c45f89489);
+        
+    
+            map_bc483135b404a2ebb5739a2c45f89489.fitBounds(
+                [[40.77559999999998, -79.18739999999998], [40.96509999999999, -78.8395]],
+                {}
+            );
+        
+    
+        function geo_json_4486cecbb07c44d280f8c8db6ce89b17_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillColor": "red", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_4486cecbb07c44d280f8c8db6ce89b17_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_4486cecbb07c44d280f8c8db6ce89b17_pointToLayer(feature, latlng) {
+            var opts = {
+  "stroke": true,
+  "color": "#3388ff",
+  "weight": 3,
+  "opacity": 1.0,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "radius": 2,
+};
+            
+            let style = geo_json_4486cecbb07c44d280f8c8db6ce89b17_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_4486cecbb07c44d280f8c8db6ce89b17_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_4486cecbb07c44d280f8c8db6ce89b17.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_4486cecbb07c44d280f8c8db6ce89b17_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_4486cecbb07c44d280f8c8db6ce89b17 = L.geoJson(null, {
+                onEachFeature: geo_json_4486cecbb07c44d280f8c8db6ce89b17_onEachFeature,
+            
+                style: geo_json_4486cecbb07c44d280f8c8db6ce89b17_styler,
+                pointToLayer: geo_json_4486cecbb07c44d280f8c8db6ce89b17_pointToLayer,
+            ...{
+}
+        });
+
+        function geo_json_4486cecbb07c44d280f8c8db6ce89b17_add (data) {
+            geo_json_4486cecbb07c44d280f8c8db6ce89b17
+                .addData(data);
+        }
+            geo_json_4486cecbb07c44d280f8c8db6ce89b17_add({"bbox": [-79.18739999999998, 40.77559999999998, -78.8395, 40.96509999999999], "features": [{"bbox": [-78.8525, 40.78119999999999, -78.8525, 40.78119999999999], "geometry": {"coordinates": [-78.8525, 40.78119999999999], "type": "Point"}, "id": "18359", "properties": {"__folium_color": "red", "address": "Arcadia Road", "city_or_county": "Arcadia", "date": "2016-05-03", "incident_characteristics": "Shot - Dead (murder, accidental, suicide)", "incident_id": 558763, "incident_url": "http://www.gunviolencearchive.org/incident/558763", "index_right": 0, "latitude": 40.7812, "location_center": "Punxsutawney, PA", "location_description": null, "longitude": -78.8525, "n_injured": 0, "n_killed": 1, "state": "Pennsylvania"}, "type": "Feature"}, {"bbox": [-79.18739999999998, 40.96509999999999, -79.18739999999998, 40.96509999999999], "geometry": {"coordinates": [-79.18739999999998, 40.96509999999999], "type": "Point"}, "id": "73419", "properties": {"__folium_color": "red", "address": "693 E Market Street", "city_or_county": "Punxsutawney", "date": "2017-04-08", "incident_characteristics": "Shot - Wounded/Injured||Non-Aggression Incident||Accidental Shooting||Accidental Shooting - Injury||Accidental/Negligent Discharge", "incident_id": 816113, "incident_url": "http://www.gunviolencearchive.org/incident/816113", "index_right": 0, "latitude": 40.9651, "location_center": "Punxsutawney, PA", "location_description": null, "longitude": -79.1874, "n_injured": 1, "n_killed": 0, "state": "Pennsylvania"}, "type": "Feature"}, {"bbox": [-79.18739999999998, 40.96509999999999, -79.18739999999998, 40.96509999999999], "geometry": {"coordinates": [-79.18739999999998, 40.96509999999999], "type": "Point"}, "id": "73534", "properties": {"__folium_color": "red", "address": "693 E Market St", "city_or_county": "Punxsutawney", "date": "2017-04-08", "incident_characteristics": "Shot - Wounded/Injured||Non-Aggression Incident||Accidental Shooting||Accidental Shooting - Injury||Accidental/Negligent Discharge", "incident_id": 816105, "incident_url": "http://www.gunviolencearchive.org/incident/816105", "index_right": 0, "latitude": 40.9651, "location_center": "Punxsutawney, PA", "location_description": "Timblin Borough", "longitude": -79.1874, "n_injured": 1, "n_killed": 0, "state": "Pennsylvania"}, "type": "Feature"}, {"bbox": [-79.10809999999998, 40.9022, -79.10809999999998, 40.9022], "geometry": {"coordinates": [-79.10809999999998, 40.9022], "type": "Point"}, "id": "114560", "properties": {"__folium_color": "red", "address": "Neal Flat Rd", "city_or_county": "Smicksburg", "date": "2017-12-08", "incident_characteristics": "Shot - Wounded/Injured||Accidental Shooting||Accidental Shooting - Injury", "incident_id": 1004976, "incident_url": "http://www.gunviolencearchive.org/incident/1004976", "index_right": 0, "latitude": 40.9022, "location_center": "Punxsutawney, PA", "location_description": null, "longitude": -79.1081, "n_injured": 1, "n_killed": 0, "state": "Pennsylvania"}, "type": "Feature"}, {"bbox": [-78.8395, 40.84830000000001, -78.8395, 40.84830000000001], "geometry": {"coordinates": [-78.8395, 40.84830000000001], "type": "Point"}, "id": "114666", "properties": {"__folium_color": "red", "address": "Fire Tower Rd", "city_or_county": "Glen Campbell", "date": "2017-12-09", "incident_characteristics": "Shot - Wounded/Injured||Accidental Shooting||Accidental Shooting - Injury||Hunting accident", "incident_id": 1004974, "incident_url": "http://www.gunviolencearchive.org/incident/1004974", "index_right": 0, "latitude": 40.8483, "location_center": "Punxsutawney, PA", "location_description": null, "longitude": -78.8395, "n_injured": 1, "n_killed": 0, "state": "Pennsylvania"}, "type": "Feature"}, {"bbox": [-79.0501, 40.77559999999998, -79.0501, 40.77559999999998], "geometry": {"coordinates": [-79.0501, 40.77559999999998], "type": "Point"}, "id": "121907", "properties": {"__folium_color": "red", "address": "Manor St", "city_or_county": "Marion Center", "date": "2018-01-25", "incident_characteristics": "Shot - Wounded/Injured||Institution/Group/Business", "incident_id": 1036235, "incident_url": "http://www.gunviolencearchive.org/incident/1036235", "index_right": 0, "latitude": 40.7756, "location_center": "Punxsutawney, PA", "location_description": null, "longitude": -79.0501, "n_injured": 1, "n_killed": 0, "state": "Pennsylvania"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_4486cecbb07c44d280f8c8db6ce89b17.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["incident_id", "date", "state", "city_or_county", "address", "n_killed", "n_injured", "incident_url", "incident_characteristics", "location_description", "latitude", "longitude", "index_right", "location_center"];
+    let aliases = ["incident_id", "date", "state", "city_or_county", "address", "n_killed", "n_injured", "incident_url", "incident_characteristics", "location_description", "latitude", "longitude", "index_right", "location_center"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_4486cecbb07c44d280f8c8db6ce89b17.addTo(map_bc483135b404a2ebb5739a2c45f89489);
+        
+</script>
+</html>
