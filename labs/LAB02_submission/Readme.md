@@ -32,20 +32,14 @@ docker build -t preprocessor-app .
 
 ### Inference API Container
 ```bash
-[PUT YOUR DOCKER RUN COMMAND FOR INFERENCE API CONTAINER HERE]
+docker run -d --name inference-api -p 8000:8000 -v $(pwd)/logs:/logs inference-app
 ```
 
 ### Preprocessor Container
 ```bash
-[PUT YOUR DOCKER RUN COMMAND FOR PREPROCESSOR CONTAINER HERE]
+docker run -d --name preprocessor -v $(pwd)/incoming:/incoming -e API_URL=http://host.docker.internal:8000 preprocessor-app
 ```
 
 ## Brief Explanation: How the Containers Communicate
-[Write 3-6 sentences here.]
-
-Points to cover:
-- Which container calls which endpoint.
-- How the preprocessor knows where to find the inference API.
-- How images and logs persist using mounted host folders.
-- Why `localhost` can be tricky inside containers.
+The preprocessor container monitors the `/incoming` volume for new images. When it finds one, it parses the filename and sends the image as a POST request to the inference API's `/predict` endpoint. The preprocessor finds the API using the `API_URL` environment variable, which is set to `http://host.docker.internal:8000` to reach the host's port 8000 from within the container. Images and logs persist across container restarts because they are stored in mounted host folders (`incoming/` and `logs/`). `localhost` inside a container refers to the container itself, so `host.docker.internal` is used on macOS/Windows to reach the host machine and access the mapped port of the API container.
 

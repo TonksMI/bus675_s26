@@ -209,14 +209,51 @@ async def predict(
 # ============================================================================
 # TODO: Add /health and /stats endpoints (Part 4)
 # ============================================================================
-# Your code here!
-# 
-# /health should return: {"status": "healthy", "model_loaded": true}
-#
-# /stats should read from the log file and return statistics like:
-# - Total items processed
-# - Breakdown by classification
-# - Average confidence score
+
+@app.get("/health")
+def health():
+    """Service health check."""
+    return {
+        "status": "healthy",
+        "model_loaded": model is not None
+    }
+
+
+@app.get("/stats")
+def stats():
+    """Processing statistics from the log file."""
+    if not LOG_PATH.exists():
+        return {
+            "total_processed": 0,
+            "top_predictions": {},
+            "average_confidence": 0
+        }
+    
+    total = 0
+    predictions = {}
+    confidence_sum = 0
+    
+    try:
+        with open(LOG_PATH, 'r') as f:
+            for line in f:
+                if not line.strip():
+                    continue
+                entry = json.loads(line)
+                total += 1
+                pred = entry["top_prediction"]
+                predictions[pred] = predictions.get(pred, 0) + 1
+                confidence_sum += entry["confidence"]
+                
+        return {
+            "total_processed": total,
+            "top_predictions": predictions,
+            "average_confidence": round(confidence_sum / total, 2) if total > 0 else 0
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error reading statistics: {str(e)}"
+        )
 
 
 if __name__ == "__main__":
