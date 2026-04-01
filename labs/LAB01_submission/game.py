@@ -27,6 +27,23 @@ def roll_dice(num_dice, sides):
 
 
 # =============================================================================
+# Item Class
+# =============================================================================
+
+class Item:
+    """An item that can be picked up and used."""
+
+    def __init__(self, name, description, healing_value=0, is_quest_item=False):
+        self.name = name
+        self.description = description
+        self.healing_value = healing_value
+        self.is_quest_item = is_quest_item
+
+    def __str__(self):
+        return f"{self.name} - {self.description}"
+
+
+# =============================================================================
 # Character Classes
 # =============================================================================
 
@@ -34,25 +51,33 @@ class Character:
     """Base class for all characters in the game."""
 
     def __init__(self, name, health, strength, defense):
-        # TODO: Initialize attributes
-        pass
+        self.name = name
+        self.health = health
+        self.max_health = health
+        self.strength = strength
+        self.defense = defense
 
     def is_alive(self):
-        # TODO: Return True if health > 0
-        pass
+        """Return True if health > 0"""
+        return self.health > 0
 
     def take_damage(self, amount):
-        # TODO: Reduce health, but don't go below 0
-        # Print a message about the damage taken
-        pass
+        """Reduce health, but don't go below 0"""
+        self.health = max(0, self.health - amount)
+        print(f"BAM! {self.name} takes {amount} damage! (HP: {self.health}/{self.max_health})")
 
     def attack(self, target):
-        # TODO: Implement d20 combat
-        # 1. Roll d20, add strength
-        # 2. Compare to target's defense
-        # 3. If hit, deal damage to target
-        # 4. Print combat messages!
-        pass
+        """Implement d20 combat"""
+        roll = roll_d20()
+        attack_score = roll + self.strength
+        print(f"CLASH! {self.name} attacks {target.name}! (Roll: {roll} + Str: {self.strength} = {attack_score})")
+        
+        if attack_score >= target.defense:
+            damage = roll_dice(1, 6) + (self.strength // 2)
+            print(f"HIT!")
+            target.take_damage(damage)
+        else:
+            print(f"MISS!")
 
     def __str__(self):
         return f"{self.name} (HP: {self.health}/{self.max_health})"
@@ -62,33 +87,70 @@ class Player(Character):
     """The player character."""
 
     def __init__(self, name):
-        # TODO: Call parent __init__ with appropriate starting stats
-        # TODO: Initialize inventory as empty list
-        pass
+        super().__init__(name, health=50, strength=5, defense=12)
+        self.inventory = []
 
     def pick_up(self, item):
-        # TODO: Add item to inventory
-        pass
+        """Add item to inventory"""
+        self.inventory.append(item)
+        print(f"INVENTORY: You picked up: {item.name}")
+
+    def use_item(self, item_name):
+        """Use an item from the inventory"""
+        for item in self.inventory:
+            if item_name.lower() in item.name.lower():
+                if item.healing_value > 0:
+                    old_hp = self.health
+                    self.health = min(self.max_health, self.health + item.healing_value)
+                    healed = self.health - old_hp
+                    print(f"USE: You used {item.name}. It restored {healed} health!")
+                    self.inventory.remove(item)
+                    return True
+                else:
+                    print(f"USE: You can't use {item.name} right now.")
+                    return False
+        
+        print(f"USE: You don't have '{item_name}' in your inventory.")
+        return False
 
     def show_inventory(self):
-        # TODO: Display all items in inventory
-        pass
+        """Display all items in inventory"""
+        if not self.inventory:
+            print("Your inventory is empty.")
+        else:
+            print("\nINVENTORY:")
+            for item in self.inventory:
+                print(f"- {item}")
 
 
 class Enemy(Character):
     """Base class for enemies."""
 
     def __init__(self, name, health, strength, defense, xp_value=10):
-        # TODO: Call parent __init__
-        # TODO: Set xp_value
-        pass
+        super().__init__(name, health, strength, defense)
+        self.xp_value = xp_value
 
 
-# TODO: Create specific enemy types (Minion, Elite, Boss)
-# Example:
-# class Goblin(Enemy):
-#     def __init__(self):
-#         super().__init__("Goblin", health=15, strength=3, defense=8, xp_value=5)
+# Specific enemy types
+class DrunkenSailor(Enemy):
+    def __init__(self):
+        super().__init__("Drunken Sailor", health=15, strength=2, defense=8, xp_value=5)
+
+class ScurvyRat(Enemy):
+    def __init__(self):
+        super().__init__("Scurvy Rat", health=10, strength=1, defense=10, xp_value=3)
+
+class Siren(Enemy):
+    def __init__(self):
+        super().__init__("Siren", health=30, strength=4, defense=13, xp_value=20)
+
+class GhostPirate(Enemy):
+    def __init__(self):
+        super().__init__("Ghost Pirate", health=35, strength=5, defense=14, xp_value=25)
+
+class Blackbeard(Enemy):
+    def __init__(self):
+        super().__init__("Captain Blackbeard", health=60, strength=8, defense=15, xp_value=100)
 
 
 # =============================================================================
@@ -103,18 +165,28 @@ class Location:
         self.description = description
         self.connections = {}  # {"north": Location, "south": Location, etc.}
         self.enemies = []      # List of enemies in this location
-        self.items = []        # List of items in this location
+        self.items = []        # List of Item objects in this location
 
     def describe(self):
         """Print a full description of the location."""
         print(f"\n{'='*50}")
-        print(f"📍 {self.name}")
+        print(f"LOCATION: {self.name}")
         print(f"{'='*50}")
         print(self.description)
 
-        # TODO: Show enemies if present
-        # TODO: Show items if present
-        # TODO: Show available exits
+        if self.enemies:
+            print("\nENEMIES PRESENT:")
+            for enemy in self.enemies:
+                print(f"- {enemy.name}")
+
+        if self.items:
+            print("\nITEMS HERE:")
+            for item in self.items:
+                print(f"- {item.name}")
+
+        exits = self.get_exits()
+        if exits:
+            print(f"\nEXITS: {', '.join(exits)}")
 
     def get_exits(self):
         """Return a list of available directions."""
@@ -133,25 +205,112 @@ def create_world():
     """Create and connect all locations. Returns the starting location."""
 
     # Create locations
-    # village = Location(
-    #     "The Village",
-    #     "A peaceful village with thatched-roof cottages. Smoke rises from chimneys."
-    # )
+    port = Location(
+        "Port Royal",
+        "The bustling naval base of the Caribbean. The British Navy's flags fly high."
+    )
+    tavern = Location(
+        "Tortuga Tavern",
+        "A rowdy tavern filled with the smell of rum and salt. Pirates are singing shanties."
+    )
+    ship = Location(
+        "The Jolly Roger",
+        "Your trusty ship. The sails are flapping in the wind, ready for adventure."
+    )
+    reef = Location(
+        "Siren's Reef",
+        "The water is crystal clear, but jagged rocks lurk beneath. You hear faint, haunting music."
+    )
+    lagoon = Location(
+        "Mermaid's Lagoon",
+        "A beautiful lagoon with glowing water. Be careful, mermaids can be deadly."
+    )
+    graveyard = Location(
+        "Shipwreck Graveyard",
+        "The remains of dozens of ships litter the seabed. Ghosts of sailors roam here."
+    )
+    island = Location(
+        "Skull Island",
+        "A dark, foreboding island. The jungle is thick and you feel watched from the shadows."
+    )
+    cannibal = Location(
+        "Cannibal Island",
+        "A tropical paradise with a dark secret. The local tribe is looking for dinner."
+    )
+    marsh = Location(
+        "The Foggy Marsh",
+        "A thick, swampy area filled with mist. It's hard to see where you're going."
+    )
+    cave = Location(
+        "Blackbeard's Cave",
+        "A massive cave dripping with water. Gold glints in the darkness, but a cold presence looms."
+    )
+    hidden_cove = Location(
+        "The Hidden Cove",
+        "A peaceful, secret beach. The perfect place to stash a legendary treasure."
+    )
 
-    # TODO: Create more locations (4-6 total)
+    # Interconnected Graph Connections
+    # Port Royal Hub
+    port.add_connection("west", tavern)
+    tavern.add_connection("east", port)
+    
+    port.add_connection("east", ship)
+    ship.add_connection("west", port)
+    
+    port.add_connection("north", reef)
+    reef.add_connection("south", port)
+    
+    port.add_connection("south", lagoon)
+    lagoon.add_connection("north", port)
+    
+    # Outer Ring and Cross-connections
+    tavern.add_connection("south", graveyard)
+    graveyard.add_connection("north", tavern)
+    
+    ship.add_connection("south", graveyard)
+    graveyard.add_connection("east", ship)
+    
+    reef.add_connection("west", island)
+    island.add_connection("east", reef)
+    
+    lagoon.add_connection("west", cannibal)
+    cannibal.add_connection("east", lagoon)
+    
+    graveyard.add_connection("south", cannibal)
+    cannibal.add_connection("north", graveyard)
+    
+    graveyard.add_connection("west", island)
+    island.add_connection("south", graveyard)
+    
+    # Path to the End
+    island.add_connection("west", marsh)
+    marsh.add_connection("north", island)
+    
+    cannibal.add_connection("west", marsh)
+    marsh.add_connection("south", cannibal)
+    
+    marsh.add_connection("west", cave)
+    cave.add_connection("east", marsh)
+    
+    cave.add_connection("north", hidden_cove)
+    hidden_cove.add_connection("south", cave)
 
-    # Connect locations (remember to connect both ways!)
-    # village.add_connection("north", castle)
-    # castle.add_connection("south", village)
+    # Add enemies
+    port.enemies.append(ScurvyRat())
+    tavern.enemies.append(DrunkenSailor())
+    reef.enemies.append(Siren())
+    graveyard.enemies.append(GhostPirate())
+    cannibal.enemies.append(DrunkenSailor()) 
+    cave.enemies.append(Blackbeard())
 
-    # TODO: Add enemies to locations
-    # dungeon.enemies.append(Goblin())
+    # Add items
+    port.items.append(Item("Scurvy Biscuit", "A hard, dry biscuit. Better than nothing.", healing_value=5))
+    tavern.items.append(Item("Bottle of Rum", "Fine Caribbean rum. Restores your spirit.", healing_value=20))
+    lagoon.items.append(Item("Old Grog", "Watered down rum. Still does the trick.", healing_value=10))
+    cave.items.append(Item("Golden Kraken Idol", "The legendary treasure of Blackbeard.", is_quest_item=True))
 
-    # TODO: Add items to locations (optional)
-
-    # Return the starting location
-    # return village
-    pass
+    return port
 
 
 # =============================================================================
@@ -174,7 +333,7 @@ class Combat:
 
     def start(self):
         """Begin combat and run until someone wins/loses/flees."""
-        print(f"\n⚔️ COMBAT BEGINS! ⚔️")
+        print(f"\nCOMBAT BEGINS!")
         print(f"{self.player.name} vs {self.enemy.name}!")
 
         while self.state != Combat.COMBAT_END:
@@ -188,16 +347,25 @@ class Combat:
     def player_turn(self):
         """Handle player's turn in combat."""
         print(f"\n{self.player} | {self.enemy}")
-        print("What do you do? (attack / run)")
+        print("What do you do? (attack / use [item] / run)")
 
-        action = input("> ").lower().strip()
+        action_input = input("> ").lower().strip()
+        parts = action_input.split()
+        if not parts: return
+        
+        action = parts[0]
 
         if action == "attack":
             self.player.attack(self.enemy)
             if not self.enemy.is_alive():
-                print(f"\n🎉 {self.enemy.name} has been defeated!")
+                print(f"\nVICTORY! {self.enemy.name} has been defeated!")
                 self.state = Combat.COMBAT_END
             else:
+                self.state = Combat.ENEMY_TURN
+
+        elif action == "use" and len(parts) > 1:
+            item_name = " ".join(parts[1:])
+            if self.player.use_item(item_name):
                 self.state = Combat.ENEMY_TURN
 
         elif action == "run":
@@ -210,7 +378,7 @@ class Combat:
                 self.state = Combat.ENEMY_TURN
 
         else:
-            print("Invalid action. Try 'attack' or 'run'.")
+            print("Invalid action. Try 'attack', 'use [item]', or 'run'.")
 
     def enemy_turn(self):
         """Handle enemy's turn in combat."""
@@ -218,7 +386,7 @@ class Combat:
         self.enemy.attack(self.player)
 
         if not self.player.is_alive():
-            print(f"\n💀 {self.player.name} has fallen!")
+            print(f"\nDEFEAT! {self.player.name} has fallen!")
             self.state = Combat.COMBAT_END
         else:
             self.state = Combat.PLAYER_TURN
@@ -273,15 +441,19 @@ class Game:
     def show_intro(self):
         """Display the game introduction."""
         print("\n" + "="*60)
-        print("         YOUR GAME TITLE HERE")
+        print("         THE LEGEND OF KRAKEN'S COVE")
         print("="*60)
-        print("\nYour epic intro text goes here...")
-        print("Set the scene! What's happening? Why is the player here?")
+        print("\nYou are a young buccaneer who has just arrived at Port Royal.")
+        print("You've heard whispers of Captain Blackbeard's legendary treasure,")
+        print("the Golden Kraken Idol, hidden somewhere in the mysterious Kraken's Cove.")
+        print("Your journey will take you across the high seas, through Siren's Reef,")
+        print("and eventually to the dark Skull Island.")
+        print("\nCan you defeat the ghost of Blackbeard and claim the treasure?")
         print("\n" + "="*60)
 
     def create_player(self):
         """Create the player character."""
-        print("\nWhat is your name, adventurer?")
+        print("\nWhat is your name, buccaneer?")
         name = input("> ")
         self.player = Player(name)
         print(f"\nWelcome, {name}! Your adventure begins...")
@@ -314,6 +486,16 @@ class Game:
         elif action in ["fight", "attack"]:
             self.initiate_combat()
 
+        elif action in ["take", "get", "pick"] and len(parts) > 1:
+            item_name = " ".join(parts[1:])
+            self.take_item(item_name)
+
+        elif action in ["use"] and len(parts) > 1:
+            item_name = " ".join(parts[1:])
+            self.player.use_item(item_name)
+            # Re-check victory condition after using item (if it's the idol)
+            self.check_victory()
+
         elif action in ["inventory", "i"]:
             self.player.show_inventory()
 
@@ -324,12 +506,33 @@ class Game:
         else:
             print("I don't understand that command. Type 'help' for options.")
 
+    def take_item(self, item_name):
+        """Pick up an item from the current location."""
+        found_item = None
+        for item in self.current_location.items:
+            if item_name.lower() in item.name.lower():
+                found_item = item
+                break
+        
+        if found_item:
+            self.current_location.items.remove(found_item)
+            self.player.pick_up(found_item)
+            self.check_victory()
+        else:
+            print(f"There's no '{item_name}' here.")
+
+    def check_victory(self):
+        """Check if victory conditions are met."""
+        has_idol = any(item.name == "Golden Kraken Idol" for item in self.player.inventory)
+        if has_idol and self.current_location.name == "The Hidden Cove":
+            self.state = Game.VICTORY
+
     def move(self, direction):
         """Move the player in the specified direction."""
         if direction in self.current_location.connections:
             self.current_location = self.current_location.connections[direction]
             self.current_location.describe()
-            # TODO: Check for automatic combat triggers?
+            self.check_victory()
         else:
             print(f"You can't go {direction} from here.")
 
@@ -345,17 +548,18 @@ class Game:
 
         if result == "victory":
             self.current_location.enemies.remove(enemy)
-            # TODO: Check for victory condition (e.g., boss defeated)
         elif result == "defeat":
             self.state = Game.GAME_OVER
 
     def show_help(self):
         """Display available commands."""
-        print("\n📜 AVAILABLE COMMANDS:")
-        print("  go [direction] - Move in a direction (north, south, east, west)")
-        print("  look          - Examine your surroundings")
-        print("  fight         - Attack an enemy in this location")
-        print("  inventory     - Check your inventory")
+        print("\nAVAILABLE COMMANDS:")
+        print("  go [direction] - Move (north, south, east, west)")
+        print("  look          - Examine surroundings")
+        print("  fight         - Attack enemy")
+        print("  take [item]   - Pick up an item")
+        print("  use [item]    - Use an item from inventory")
+        print("  inventory     - Check inventory")
         print("  help          - Show this help message")
         print("  quit          - Exit the game")
 
@@ -364,16 +568,17 @@ class Game:
         print("\n" + "="*60)
         print("                    GAME OVER")
         print("="*60)
-        print("\nYou have fallen. The adventure ends here...")
+        print("\nYou have been defeated. Your bones will bleach on the sands of Kraken's Cove.")
         print("\n(But you can always try again!)")
 
     def show_victory(self):
         """Display victory message."""
         print("\n" + "="*60)
-        print("                    🎉 VICTORY! 🎉")
+        print("                    VICTORY!")
         print("="*60)
-        print("\nCongratulations! You have completed your quest!")
-        # TODO: Add your custom victory text
+        print("\nYou have reclaimed the Golden Kraken Idol and brought it to the Hidden Cove!")
+        print("Your name will be sung in pirate shanties for generations to come.")
+        print("\nCongratulations, Pirate Lord!")
 
 
 # =============================================================================

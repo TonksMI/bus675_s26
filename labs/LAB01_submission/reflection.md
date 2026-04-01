@@ -1,13 +1,7 @@
 # Reflection: OOP Design Decisions
 
-Write 2-3 paragraphs reflecting on your object-oriented design. Some questions to consider:
+In this project, I structured the game using object-oriented principles to ensure code reusability and clear separation of concerns. The core of the design is the Character base class, which encapsulates essential attributes like health, strength, and defense, along with shared behaviors such as attack and take_damage. By using inheritance, I derived Player and Enemy from this base class, allowing them to share core functionality while specializing in their specific roles - such as the player's inventory management and the enemies' XP values. Further specializing enemies into subclasses like Siren or Blackbeard allowed for a diverse range of encounters with minimal code duplication.
 
-- Why did you structure your classes the way you did?
-- What inheritance relationships did you use and why?
-- What was challenging about managing multiple interacting objects?
-- If you had more time, what would you refactor or add?
-- How does this experience connect to working with OOP in analytics/ML codebases?
+One of the main challenges was managing the interaction between multiple objects, particularly in the Combat and Location classes. Deciding where to store state (like which enemies are in which room) and how to handle transitions between exploration and combat required careful planning. I chose to make Combat its own class to encapsulate the turn-based logic, which kept the Game controller cleaner and more focused on high-level navigation and state management.
 
----
-
-[Your reflection here]
+The implementation of a dedicated Item class allowed for items to have their own properties, such as healing values, which are automatically applied when used. This experience highlights how OOP is crucial in complex systems like ML pipelines, where different components (data loaders, models, evaluators) need to interact seamlessly while maintaining their own internal states and specialized behaviors.

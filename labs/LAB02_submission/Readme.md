@@ -1,8 +1,8 @@
 # Lab 2 Submission README
 
 ## Student Information
-- Name: [Your Name]
-- Date: [YYYY-MM-DD]
+- Name: Matt Tonks
+- Date: 2026-03-19
 
 ## Deliverables Included
 - `inference_api/Dockerfile`
@@ -13,14 +13,19 @@
 
 ## Docker Build Commands Used
 
+### Volume creation
+```bash
+docker volume create mydata
+```
+
 ### Inference API
 ```bash
-[PUT YOUR DOCKER BUILD COMMAND FOR INFERENCE API IMAGE HERE]
+docker build -t inference-app .
 ```
 
 ### Preprocessor
 ```bash
-[PUT YOUR DOCKER BUILD COMMAND FOR PREPROCESSOR IMAGE HERE]
+docker build -t preprocessor-app .
 ```
 
 ## Docker Run Commands Used
